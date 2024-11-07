@@ -4,7 +4,7 @@ on: push
 
 jobs:
   build:
-    run-on: ubuntu-latesgt
+    runs-on: ubuntu-latesgt
     steps:
       - uses: actions/checkout@3
       - uses: actions/setup-python@5
