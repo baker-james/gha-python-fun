@@ -1,1 +1,13 @@
+name: my-basic-workflow
+
 on: push
+
+jobs:
+  build:
+    run-on: ubuntu-latesgt
+    steps:
+      - uses: actions/checkout@3
+      - uses: actions/setup-python@5
+        with: 
+          python-version: '3.13'
+      - run: python main.py
