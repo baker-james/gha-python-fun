@@ -1,6 +1,9 @@
 name: my-basic-workflow
 
-on: push
+on: 
+  push:
+  schedule:
+    - cron: '* * * * *'
 
 jobs:
   build:
