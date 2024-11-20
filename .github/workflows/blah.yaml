@@ -2,8 +2,6 @@ name: my-basic-workflow
 
 on: 
   push:
-  schedule:
-    - cron: '* * * * *'
 
 jobs:
   run:
