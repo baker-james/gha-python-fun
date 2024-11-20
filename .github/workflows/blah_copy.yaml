@@ -1,13 +1,6 @@
-name: my-basic-workflow
+name: my-second-basic-workflow
 
 on: 
-  push: 
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-      - master
   workflow_dispatch:
     
 
@@ -20,4 +13,4 @@ jobs:
         with: 
           python-version: '3.13'
       - run: sleep 10
-      - run: python main.py
+      - run: echo hello
