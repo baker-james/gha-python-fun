@@ -3,10 +3,12 @@ name: my-basic-workflow
 on: 
   push:
     
+env:
+  blah: Workflow level env, defined before run-name
+
+
 run-name: Pipeline run by ${{ env.blah }}
 
-env:
-  blah: Workflow level env, defined after run-name
 
 jobs:
   run:
