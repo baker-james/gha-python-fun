@@ -7,7 +7,7 @@ env:
   blah: Workflow level env, defined before run-name
 
 
-run-name: Pipeline run by ${{ env.blah }}
+run-name: Pipeline run for commit ${{ github.sha }}
 
 
 jobs:
@@ -20,4 +20,5 @@ jobs:
           python-version: '3.13'
       - run: echo ${{  github.ref  }}
       - run: echo ${{  github.ref == 'refs/heads/master' }}
+      - run: echo ${{ env.blah }}
       - run: python main.py
