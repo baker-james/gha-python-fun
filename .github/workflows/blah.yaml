@@ -20,4 +20,6 @@ jobs:
           python-version: '3.13'
       - run: echo ${{  vars.GREETING  }}
       - run: echo ${{  secrets.shhh  }}
+      - run: |
+          [[ -f ${{ secrets.file }} ]] || ( echo "File does not exist" && exit 1 )
       - run: python main.py
