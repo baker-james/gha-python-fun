@@ -19,5 +19,5 @@ jobs:
           python-version: '3.13'
       - run: echo ${{  github.ref  }}
       - run: echo ${{  github.ref == 'refs/heads/master' }}
-      - run: echo ${{  env.blah  }}
+      - run: echo ${{  env.mascot  }}
       - run: python main.py
