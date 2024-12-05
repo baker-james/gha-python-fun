@@ -15,5 +15,5 @@ jobs:
         with: 
           python-version: '3.13'
       - run: echo ${{  github.ref  }}
-      - run: echo ${{  github.ref == 'ref/heads/master' }}
+      - run: echo ${{  github.ref == 'refs/heads/master' }}
       - run: python main.py
