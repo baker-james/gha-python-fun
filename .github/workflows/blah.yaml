@@ -3,8 +3,10 @@ name: my-basic-workflow
 on: 
   push:
     
-run-name: Pipeline run by @${{ github.actor }}
+run-name: Pipeline run by ${{ env.blah }}
 
+env:
+  blah: Workflow level env, defined after run-name
 
 jobs:
   run:
