@@ -4,8 +4,7 @@ on:
   push:
     
 env:
-  blah: 'Workflow level env, defined before run-name'
-
+  mascot: Mona
 
 run-name: Pipeline run for commit ${{ github.sha }}
 
