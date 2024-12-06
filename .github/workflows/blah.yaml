@@ -1,7 +1,12 @@
 name: my-basic-workflow
 
+permissions:
+  issues: write
+
 on: 
-  push:
+  push: 
+    branches: 
+      - master
     
 env:
   blah: Workflow level env, defined before run-name
@@ -19,7 +24,9 @@ jobs:
         with: 
           python-version: '3.13'
       - run: echo ${{  vars.GREETING  }}
-      - run: echo ${{  secrets.shhh  }}
-      - run: |
-          [[ -f ${{ secrets.file }} ]] || ( echo "File does not exist" && exit 1 )
-      - run: python main.py
+      - run: python main.py > artifact.txt
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifact.txt
+          path: .
