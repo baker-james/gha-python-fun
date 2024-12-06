@@ -50,4 +50,4 @@ jobs:
         with: 
           name: my-artifact
       - run: 'ls'
-      - run: 'file my-artifact.zip'
+      - run: 'cat ./output.txt'
