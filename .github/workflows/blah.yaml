@@ -26,7 +26,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo ${{  vars.GREETING  }}
+      - name: Conventional Changelog Action
+        id: changelog
+        uses: TriPSs/conventional-changelog-action@v3.14.0
       - run: echo "${{  inputs.msg  }}" > output.txt
+      - run: echo ${{  steps.changelog.outputs.changelog }} >> output.txt
       - name: optioanl 
         if: ${{ inputs.extra }}
         run: echo "${{ inputs.extra }}" >> output.txt
