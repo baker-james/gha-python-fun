@@ -30,16 +30,9 @@ jobs:
       - name: optioanl 
         if: ${{ inputs.extra }}
         run: echo "${{ inputs.extra }}" >> output.txt
-      - run: |
-          curl --request POST \
-          --url https://api.github.com/repos/${{ github.repository }}/issues \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'content-type: application/json' \
-          --data '{
-          "title": "Failure: ${{ inputs.msg }}",
-          "body": "Details: ${{ inputs.extra }}"
-          }' \
-          --fail
+      - run: wc -c output.txt | awk '{ print "COUNT="$1 }' >> $GITHUB_OUTPUT
+        id: word-count
+      - run: echo "The word count is ${{  steps.word-count.outputs.COUNT }}"
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
