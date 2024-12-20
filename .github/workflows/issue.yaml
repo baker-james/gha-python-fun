@@ -11,4 +11,4 @@ jobs:
         env: [test, stage, sandbox, live]
         strength: [soft, medium, hard]
     steps:
-      - run: echo "Doing some work for ${{ matrix.env }} with strength ${{ matrix.strength }}"
+      - run: echo "${{ toJson(github) }}"
