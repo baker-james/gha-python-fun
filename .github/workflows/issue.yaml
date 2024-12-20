@@ -6,5 +6,9 @@ on:
 jobs:
   notify-for-issue:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        env: [test, stage, sandbox, live]
+        strength: [soft, medium, hard]
     steps:
-      - run: echo "Something happened with an issue"
+      - run: echo "Doing some work for ${{ matrix.env }} with strength ${{ matrix.strength }}"
