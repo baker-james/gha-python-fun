@@ -1,14 +1,8 @@
 on:
-  issues:
-    types:
-      - pinned 
+  push
 
 jobs:
-  notify-for-issue:
+  print:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        env: [test, stage, sandbox, live]
-        strength: [soft, medium, hard]
     steps:
-      - run: echo "${{ toJson(github) }}"
+      - run: echo ${{ github.event.head_commit.message }}
