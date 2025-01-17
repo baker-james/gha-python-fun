@@ -8,7 +8,7 @@ jobs:
       - id: some-random 
         uses: baker-james/action-random@v1
         with: 
-          my-prefix: 'blah'
+          my-prefix: '$RANDOM'
       - shell: bash 
         run: | 
           echo "random number is ${{ steps.some-random.outputs.my-random}}"
