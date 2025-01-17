@@ -2,8 +2,12 @@ on:
   push
 
 jobs:
-  print:
+  get-random:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.event.head_commit.message }}
+      - id: some-random 
+        uses: baker-james/action-random
+        with: 
+          my-prefix: 'blah'
+
       
