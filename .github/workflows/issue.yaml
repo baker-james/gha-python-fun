@@ -9,5 +9,8 @@ jobs:
         uses: baker-james/action-random@v1
         with: 
           my-prefix: 'blah'
+      - shell: bash 
+        run: | 
+          echo "random number is ${{ steps.some-random.outputs.my-random}}"
 
       
