@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - id: some-random 
-        uses: baker-james/action-random@v1
+        uses: baker-james/action-random@v2
         with: 
           my-prefix: 'anything'
       - shell: bash 
